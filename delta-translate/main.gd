@@ -14,7 +14,8 @@ var translate_flowery = {
 	"king": "my king",
 	"sus": "sustingus",
 	"here i come": "here i come sanfrandisco",
-	"wind": "mysterious wind"
+	"wind": "mysterious wind",
+	"suck it up": "suckle it up"
 }
 
 func _on_english_text_edit_text_changed() -> void:
