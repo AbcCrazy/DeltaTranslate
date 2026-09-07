@@ -12,7 +12,6 @@ var translate_flowery = {
 	"asgore": "gorey",
 	"human": "my human",
 	"king": "my king",
-	"sus": "sustingus",
 	"here i come": "here i come sanfrandisco",
 	"wind": "mysterious wind",
 	"suck it up": "suckle it up",
@@ -21,7 +20,23 @@ var translate_flowery = {
 	"old buddy": "oldbuddy",
 	"terrific": "floweriffic",
 	"delicious": "petalicious",
-	"flowey": "flowery"
+	"flowey": "flowery",
+	"lend me your": "lend me your power",
+	"susie": "princess",
+	"all according to plan": "all according to plant",
+	"hey guys": "hey guys, i think i found a glue",
+	"falling": "i'm falling",
+	"leave it to me": "leaf it to me",
+	"mostly": "mostlys",
+	"flesh": "they're eating my flesh",
+	"omega": "omega flowery"
+}
+var translate_spamton = {
+	"big shot": "[big shot!!!]",
+	"https://": "[hyperlink blocked]",
+	"www.": "[hyperlink blocked]",
+	"noelle": "side chick",
+	"ralsei": "that guy"
 }
 
 func _on_english_text_edit_text_changed() -> void:
@@ -33,14 +48,16 @@ func update_translation_side():
 			selected_mode = null
 		1:
 			selected_mode = translate_flowery
+		2:
+			selected_mode = translate_spamton
 	var translated_text = english_text_edit.text
 	if selected_mode == null:
 		translated_text_edit.text = english_text_edit.text
 		return
 	for item in selected_mode:
-		translated_text = translated_text.replace(str(item).to_upper(), str(translate_flowery[item]).to_upper())
-		translated_text = translated_text.replace(str(item).to_lower(), str(translate_flowery[item]).to_lower())
-		translated_text = translated_text.replace(str(item).capitalize(), str(translate_flowery[item]).capitalize())
+		translated_text = translated_text.replace(str(item).to_upper(), str(selected_mode[item]).to_upper())
+		translated_text = translated_text.replace(str(item).to_lower(), str(selected_mode[item]).to_lower())
+		translated_text = translated_text.replace(str(item).capitalize(), str(selected_mode[item]).capitalize())
 	translated_text_edit.text = translated_text
 
 
