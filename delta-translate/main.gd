@@ -15,7 +15,9 @@ var translate_flowery = {
 	"sus": "sustingus",
 	"here i come": "here i come sanfrandisco",
 	"wind": "mysterious wind",
-	"suck it up": "suckle it up"
+	"suck it up": "suckle it up",
+	"i think i found": "i think i found a glue",
+	"grown like a": "grown like a turnip"
 }
 
 func _on_english_text_edit_text_changed() -> void:
@@ -29,6 +31,7 @@ func update_translation_side():
 			selected_mode = translate_flowery
 	var translated_text = english_text_edit.text
 	if selected_mode == null:
+		translated_text_edit.text = english_text_edit.text
 		return
 	for item in selected_mode:
 		translated_text = translated_text.replace(str(item).to_upper(), str(translate_flowery[item]).to_upper())
