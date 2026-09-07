@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://rc0ays155d1b"]
+
+[ext_resource type="Script" uid="uid://bo0x7bofvy4vj" path="res://main.gd" id="1_ig7tw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pvoad"]
+font_size = 50
+
+[node name="manager" type="Control" unique_id=930226116]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ig7tw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1422318941]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1800255042]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="EnglishTextEdit" type="TextEdit" parent="HBoxContainer" unique_id=1862496942]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+wrap_mode = 1
+
+[node name="TranslatedTextEdit" type="TextEdit" parent="HBoxContainer" unique_id=789942425]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+wrap_mode = 1
+
+[node name="Label" type="Label" parent="." unique_id=1087101407]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -177.5
+offset_right = 177.5
+offset_bottom = 69.0
+grow_horizontal = 2
+text = "DeltaTranslate"
+label_settings = SubResource("LabelSettings_pvoad")
+
+[node name="TranslationMode" type="OptionButton" parent="." unique_id=902068078]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 125.0
+offset_bottom = 55.0
+selected = 0
+item_count = 2
+popup/item_0/text = "None"
+popup/item_0/id = 0
+popup/item_1/text = "Flowery"
+popup/item_1/id = 1
+
+[connection signal="text_changed" from="HBoxContainer/EnglishTextEdit" to="." method="_on_english_text_edit_text_changed"]
+[connection signal="item_selected" from="TranslationMode" to="." method="_on_translation_mode_item_selected"]
