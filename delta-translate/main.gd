@@ -17,7 +17,11 @@ var translate_flowery = {
 	"wind": "mysterious wind",
 	"suck it up": "suckle it up",
 	"i think i found": "i think i found a glue",
-	"grown like a": "grown like a turnip"
+	"grown like a": "grown like a turnip",
+	"old buddy": "oldbuddy",
+	"terrific": "floweriffic",
+	"delicious": "petalicious",
+	"flowey": "flowery"
 }
 
 func _on_english_text_edit_text_changed() -> void:
